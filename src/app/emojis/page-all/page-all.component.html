@@ -1,0 +1,22 @@
+<h3>{{ title }}</h3>
+
+<app-emojis-list [emojis]="emojisList" [displayCount]="displayCount">
+    <!-- Actions column -->
+    <ng-template #actionButtons let-emoji>
+        <button
+                class="btn"
+                [title]="getFavBtnTitle(emoji.name)"
+                [ngClass]="getFavBtnClass(emoji.name)"
+                (click)="onFavoriteClicked(emoji)">
+            <fa-icon [icon]="faStar"></fa-icon>
+        </button>
+        <button
+                class="btn btn-danger"
+                title="Delete"
+                (click)="onDeleteClicked(emoji)">
+            <fa-icon [icon]="faTrash"></fa-icon>
+        </button>
+    </ng-template>
+</app-emojis-list>
+
+<div *ngIf="loading" class="text-center">Loading <fa-icon [icon]="faCircleNotch" [spin]="true"></fa-icon></div>

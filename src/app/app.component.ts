@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'isp-test-emojis';
+  title = 'ISP Test: Emojis List';
 }

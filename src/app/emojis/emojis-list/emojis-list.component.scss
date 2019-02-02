@@ -1,0 +1,46 @@
+@import "~bootstrap/scss/bootstrap";
+
+.emoji-list {
+  &__table {
+    table-layout: fixed;
+  }
+
+  &__loading-cell {
+    text-align: center;
+  }
+
+  &__name-cell {
+    width: 100px;
+
+    span {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      text-decoration: none;
+      cursor: pointer;
+      border-bottom: 1px dotted $body-color;
+    }
+
+    span:hover {
+      border-bottom-color: transparent;
+    }
+  }
+
+  &__link-cell {
+    width: auto;
+  }
+
+  &__preview-cell {
+    width: 90px;
+  }
+
+  &__actions-cell {
+    width: 90px;
+  }
+
+  &__emoji-preview {
+    max-width: 25px;
+    max-height: 25px;
+  }
+}

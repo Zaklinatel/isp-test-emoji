@@ -1,0 +1,14 @@
+<h3>{{ title }}</h3>
+
+<app-emojis-list [emojis]="emojisList" [displayCount]="displayCount">
+  <ng-template #actionButtons let-emoji>
+    <button
+            class="btn btn-danger"
+            title="Remove from favorites"
+            (click)="onDeleteClicked(emoji)">
+      <fa-icon [icon]="faTimes"></fa-icon>
+    </button>
+  </ng-template>
+</app-emojis-list>
+
+<div *ngIf="loading" class="text-center">Loading <fa-icon [icon]="faCircleNotch" [spin]="true"></fa-icon></div>

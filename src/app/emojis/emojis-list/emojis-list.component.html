@@ -1,0 +1,26 @@
+<div class="emoji-list__wrapper">
+  <table class="table table-striped emoji-list__table">
+    <thead>
+    <tr>
+      <th scope="col" class="emoji-list__name-cell">Name</th>
+      <th scope="col" class="emoji-list__link-cell">Link</th>
+      <th scope="col" class="emoji-list__preview-cell">Preview</th>
+      <th scope="col" class="emoji-list__actions-cell">Actions</th>
+    </tr>
+    </thead>
+    <tbody cdkScrollable>
+    <tr *ngFor="let item of emojis | keyvalue | slice:0:displayCount">
+      <td class="emoji-list__name-cell">
+        <span [ngbPopover]="item.key" autoClose="outside" placement="top" container="body">{{ item.key }}</span>
+      </td>
+      <td class="emoji-list__link-cell">{{ item.value }}</td>
+      <td class="emoji-list__preview-cell"><app-emoji [link]="item.value"></app-emoji></td>
+      <td class="emoji-list__actions-cell">
+        <div class="btn-group btn-group-sm">
+          <ng-container *ngTemplateOutlet="actionButtons; context: getContext(item)"></ng-container>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
